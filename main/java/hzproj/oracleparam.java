@@ -28,7 +28,7 @@ public class oracleparam {
         try(PreparedStatement pstmt = conn.prepareStatement(sql)){
             Random rand = new Random();
             for (int i = 0; i < count; i++) {
-                pstmt.setInt(1, rand.nextInt(1000000)); // 0-999999 arası rastgele sayı ekliyoruz
+                pstmt.setInt(1, rand.nextInt(1000000));
                 pstmt.addBatch();
             }
             pstmt.executeBatch();
